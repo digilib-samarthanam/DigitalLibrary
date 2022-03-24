@@ -18,7 +18,7 @@ const Faq = () => {
   return (
     <div>
       <Typography style={styles.homePage} variant="h3" component="h2">
-        Faq Page Design goes here!!!
+        FAQ not designed yet
       </Typography>
     </div>
   );
