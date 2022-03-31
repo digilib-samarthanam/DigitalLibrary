@@ -4,13 +4,13 @@ import { MobilePDFReader } from "reactjs-pdf-reader";
 import CloudDownloadOutlinedIcon from "@material-ui/icons/CloudDownloadOutlined";
 import { IconButton } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
-import axios from "axios";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
 import { savePDFCall } from "../../config/apiCalls";
 import { recentlyViewedPDFCall } from "../../config/apiCalls";
+import Testpdf from "../Testpdf/Testpdf"
 
 const useStyles = makeStyles((theme) => ({
   save: {
@@ -77,10 +77,10 @@ const MobilePDFViewer = () => {
     };
   };
 
-  const saveBook = (isbn) => {
+  const saveBook = (isbn ,page) => {
     let currentPage = document.getElementById("pageNumber").value;
     let requestBody = {
-      current_page: currentPage,
+      current_page: page,
       isbn: isbn,
       user_id: currentUserId,
     };
@@ -101,7 +101,7 @@ const MobilePDFViewer = () => {
       <CssBaseline />
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
-          <IconButton aria-label="download PDF">
+          {/* <IconButton aria-label="download PDF">
             <a
               href={pdfUrl}
               download={pdfUrl}
@@ -110,13 +110,14 @@ const MobilePDFViewer = () => {
             >
               <CloudDownloadOutlinedIcon />
             </a>
-          </IconButton>
-          <div className={classes.grow} />
+          </IconButton> */}
+          {/* <div className={classes.grow} />
           <SaveIcon onClick={() => saveBook(pdfIsbn)} />
-          <div className={classes.grow1} />
+          <div className={classes.grow1} /> */}
         </Toolbar>
       </AppBar>
-      <MobilePDFReader url={pdfPath} />
+      {/* <MobilePDFReader url={pdfPath} /> */}
+      <Testpdf path={pdfPath} saveBook={saveBook} isbn={pdfIsbn}/>
     </React.Fragment>
   );
 };

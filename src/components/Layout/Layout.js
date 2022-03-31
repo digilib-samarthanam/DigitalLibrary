@@ -122,35 +122,33 @@ const Layout = (props) => {
 
 
   return (
-    <div>
+    <React.Fragment>
       <CssBaseline />
-      <Router history={history}>
-        <main>
-          <Route exact path="/" component={LogIn} />
-          <Route exact path="/home" component={HomePageContent} />
-          <Route exact path="/recently_added_books" component={RecentlyAdded} />
-          <Route exact path="/book_marked_books" component={BookMarked} />
-          <Route exact path="/recently_viewed_books" component={RecentlyViewed} />
-          <Route exact path="/recently_added_audiobooks" component={RecentlyAddedAudio} />
-          <Route exact path="/book_marked_audiobooks" component={BookMarkedAudio} />
-          <Route exact path="/viewed_audiobooks" component={ViewedAudio} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/forgotpw" component={ForgotPw} />
-          <Route exact path="/search" component={SearchPage} />
-          <Route exact path="/browse" component={BrowsePage} />
-          <Route exact path="/admin" component={AdminPage} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/sponsor" component={Sponsor} />
-          <Route exact path="/faq" component={Faq} />
-          <Route exact path="/audiobook/:file_name/:title" component={AudioBook} />
-          <Route path="/personaldev" component={PersonalDevelopment} />
-          <Route path="/pdfviewer" component={MobilePDFViewer} />
-          <Route exact path="/updatepw" component={UpdatePw} />
-          <Route exact path="/accountvf" component={AccountVf} />
-        </main>
+        <Router history={history}>
+        <Route exact path="/" component={LogIn} />
+        <Route exact path="/home" component={HomePageContent} />
+        <Route exact path="/recently_added_books" component={RecentlyAdded} />
+        <Route exact path="/book_marked_books" component={BookMarked} />
+        <Route exact path="/recently_viewed_books" component={RecentlyViewed} />
+        <Route exact path="/recently_added_audiobooks" component={RecentlyAddedAudio} />
+        <Route exact path="/book_marked_audiobooks" component={BookMarkedAudio} />
+        <Route exact path="/viewed_audiobooks" component={ViewedAudio} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/forgotpw" component={ForgotPw} />
+        <Route exact path="/search" component={SearchPage} />
+        <Route exact path="/browse" component={BrowsePage} />
+        <Route exact path="/admin" component={AdminPage} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/sponsor" component={Sponsor} />
+        <Route exact path="/faq" component={Faq} />
+        <Route exact path="/audiobook/:file_name/:title" component={AudioBook} />
+        <Route path="/personaldev" component={PersonalDevelopment} />
+        <Route path="/pdfviewer" component={MobilePDFViewer} />
+        <Route exact path="/updatepw" component={UpdatePw} />
+        <Route exact path="/accountvf" component={AccountVf} />
         {isLoggedIn && <Footer />}
       </Router>
-    </div>
+    </React.Fragment>
   );
 };
 

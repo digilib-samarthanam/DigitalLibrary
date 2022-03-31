@@ -5,6 +5,7 @@ import configureStore from './store/configureStore'
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 import "./styles/index.css";
+import "./index.css";
 
 const store = configureStore();
 const rootEl = document.getElementById("root");
